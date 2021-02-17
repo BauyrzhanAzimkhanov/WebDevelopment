@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        #black-header
+        {
+            background-color: black;
+            height: 40px;
+            width: auto;
+            color: gray;
+            padding-left: 120px;
+            padding-top: 20px;
+            padding-right: 120px;
+            font-size: 20px;
+        }
+        #main
+        {
+            margin-top: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        h1
+        {
+            text-align: left;
+            margin-left: 300px;
+            margin-right: 300px;
+            font-weight: normal;
+            color: black;
+        }
+        #myInput
+        {
+            width: 500px;
+            height: 25px;
+            margin-right: 25px;
+            border: grey 1px solid;
+            border-radius: 3px;
+            padding-left: 10px;
+        }
+        #add-button
+        {
+            height: 30px;
+            background-color: cornflowerblue;
+            color: white;
+            width: 45px;
+            border: cornflowerblue 1px solid;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+        #container
+        {
+            margin-left: 300px;
+            margin-right: 300px;
+            height: auto;
+            width: auto;
+            text-align: center;
+        }
+        .taskNames
+        {
+            padding-top: 14px;
+            padding-left: 25px;
+            width: 700px;
+            text-align: left;
+        }
+        .trash
+        {
+            margin-right: 55px;
+            padding-top: 14px;
+        }
+        .tasks
+        {
+            border: 1px grey solid;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            height: 45px;
+        }
+        input[type=checkbox]
+        {
+            margin-left: 15px;
+        }
+    </style>
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <div id="black-header">ToDo List</div>
+    <div id="main">
+        <h1>ToDo list</h1>
+        <div style="margin-bottom: 25px;">
+            <input placeholder="New Task" type="text" value="" id="myInput">
+            <input type="button" id="add-button" onclick="addNewTask()" value="Add">
+        </div>
+        <div id="container"></div>
+    </div>
+</body>
