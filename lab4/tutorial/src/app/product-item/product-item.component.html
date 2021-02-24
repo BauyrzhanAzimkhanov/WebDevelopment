@@ -1,0 +1,27 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products" class="title">
+  <h3>
+    <a [title]="product.name + ' details'" href="{{product.link}}" target="_blank" class="product-link-name">
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description" class="discription">
+    Description: {{ product.description }}
+  </p>
+  <p class="rating">Rating: {{product.rating}}</p>
+  <div class="galery">
+    <img class="images" *ngFor="let image of product.images" src="{{image.toString()}}">
+  </div>
+
+
+  <a href="https://t.me/share/url?url={{product.link}}&text=" target="_blank">
+    <button class="share">
+      Share
+    </button>
+  </a>
+
+  <script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-share-url="https://www.google.com/"></script>
+</div>
+
