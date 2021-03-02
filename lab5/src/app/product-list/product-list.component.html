@@ -1,0 +1,14 @@
+<div>
+ <h2>Products</h2>
+  <div  *ngFor="let product of productList"  class="titleList">
+    <app-product-item  *ngIf="!arrayOfDeletedIds.includes(product.id)" (idOnRemove)="deleteId($event)" [item]="product">    </app-product-item>
+
+  </div>
+  <div *ngIf="ind === 5">
+    <h4>There is no more items.</h4>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,6 @@
+<h2>Products</h2>
+<div *ngIf="visible">
+  <div *ngFor="let product of productList" class="title">
+    <app-product-item *ngIf="!deletedItemsIds.includes(product.id)" (idOnRemove)="deleteId($event)" [item]="product"></app-product-item>
+  </div>
+</div>

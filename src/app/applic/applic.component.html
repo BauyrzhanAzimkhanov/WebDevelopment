@@ -1,0 +1,9 @@
+<h1>Categories</h1>
+
+<div *ngFor="let category of categories" class="title">
+  <h2  (click)="categorySelection(category.id)">
+    {{category.id}} {{ category.name }}
+    <app-product-list [(ngModel)]="visible" [productList]="category.products"></app-product-list>
+  </h2>
+</div>
+

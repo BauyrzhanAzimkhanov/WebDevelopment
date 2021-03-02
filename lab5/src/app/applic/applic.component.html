@@ -1,0 +1,20 @@
+<h1>Categories</h1>
+
+<div *ngFor="let category of categories" class="title">
+  <h2 class="categoryName">
+    <p (click)="categorySelection(category.id)">{{category.id}} {{ category.name }}</p>
+    <app-product-list   *ngIf="category.visble" [(arrayOfDeletedIds)]="deletedItemsIds" [productList]="category.products" (categorysBannedIds)="addBannedId(category)"></app-product-list>
+  </h2>
+</div>
+<!--(idOnRemove)="deleteProduct($event)"-->
+
+
+
+
+<!--<div *ngFor="let category of categories" class="title"> &lt;!&ndash;something like whole in window&ndash;&gt;-->
+<!--  <h2 (click)="categorySelection(category.id)">-->
+<!--    {{category.id}} {{ category.name }}-->
+<!--    <app-product-list *ngIf="category.visble" [productList]="category.products"></app-product-list>-->
+<!--  </h2>-->
+<!--</div>-->
+
