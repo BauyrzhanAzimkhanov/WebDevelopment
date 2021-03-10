@@ -1,0 +1,9 @@
+<div *ngIf="!loading">
+  <h4>Album #{{album.id}}</h4>
+  <p style="margin: 5px; margin-left: 0px">{{album.title}}</p>
+  <input  class="text-input" type="text" value="" placeholder="Enter new title." [(ngModel)]="updateTitle">
+  <input type="button" class="confirmation" (click)="updateAlbum()" value="Update title">
+  <a style="margin: 5px" routerLink="/albums/{{album.id}}/photos">Photos</a>
+  <button (click)="goBack()">Go back</button>
+</div>
+<p *ngIf="loading">We are loading album.</p>
