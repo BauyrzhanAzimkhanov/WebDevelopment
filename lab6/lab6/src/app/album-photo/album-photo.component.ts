@@ -13,7 +13,7 @@ import {PhotosService} from '../photos.service';
 export class AlbumPhotoComponent implements OnInit {
   // @ts-ignore
   photos: Photo[];
-  temp: any[];
+  temp: Photo[];
   loading: boolean;
   constructor(private route: ActivatedRoute,
               private location: Location,
@@ -34,9 +34,10 @@ export class AlbumPhotoComponent implements OnInit {
   {
     console.log(id);
     this.loading = true;
+    this.photosService.getPhotos(id).subscribe((x) => console.log(x));
     this.photosService.getPhotos(id).subscribe((x) => this.photos = x);
     this.loading = false;
-    console.log(this.temp);
+    console.log(this.photos);
   }
   goBack(): void
   {
