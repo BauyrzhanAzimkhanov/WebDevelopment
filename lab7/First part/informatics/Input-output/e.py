@@ -1,3 +1,3 @@
-v = int(input())
-t = int(input())
-print(abs(109 - abs(v*t)))
+a = int(input())
+b = int(input())
+print((a * b) % 109)
