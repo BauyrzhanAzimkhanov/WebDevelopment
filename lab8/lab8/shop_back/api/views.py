@@ -23,11 +23,16 @@ def get_product(request, id):
 
 def get_categories(request):
     category = Category.objects.all()
-    category_json = [category.to_json() for categor in category]
+    category_json = [categor.to_json() for categor in category]
     return JsonResponse(category_json, safe = False)
 
 def get_category(request, id):
-    return HttpResponse(f'Category {id}')
+    try:
+        category = Category.objects.get(id = id)
+    except Category.DoesNotExist as e:
+        return JsonResponse({'message': str(e)})
+    return JsonResponse(category.to_json())
+    # return HttpResponse(f'Category {id}')
 
 products = [
     {
